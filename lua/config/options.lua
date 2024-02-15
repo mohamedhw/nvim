@@ -1,5 +1,3 @@
--- vim.cmd('autocmd!')			-- Clear all autocmd events
-
 -- UTF-8
 vim.scriptencoding = "utf-8" -- Set the script encoding to UTF-8
 vim.opt.encoding = "utf-8" -- Set the default encoding to UTF-8
@@ -25,7 +23,6 @@ vim.opt.smartindent = true -- Enable smart indentation
 vim.opt.smarttab = true -- Use shiftwidth for tab completion
 vim.opt.ai = true -- Enable auto-indentation in insert mode
 vim.opt.si = true -- Smart indenting for C programs
-vim.opt.cindent = true
 
 -- Files [Swap, Backup, Undo]
 vim.opt.swapfile = false -- Disable swap files
@@ -38,14 +35,16 @@ vim.opt.hlsearch = false -- Disable highlight search results
 vim.o.ignorecase = true -- Ignore case when searching
 vim.o.smartcase = true -- Override 'ignorecase' when the search pattern contains upper case characters
 
--- vim.opt.termguicolors = true  --Uncomment this line if your terminal supports true colors
+-- vim.opt.termguicolors = true
 
---vim.opt.scrolloff = 8   -- Minimum number of lines to keep above and below the cursor
-vim.opt.signcolumn = "yes" -- Always show the sign column
+vim.opt.signcolumn = "yes"
 
-vim.opt.updatetime = 50 -- Faster update time for CursorHold events
+vim.opt.updatetime = 50
 
-vim.opt.showtabline = 0 -- The tabline will not be shown
+vim.o.breakindent = true
+vim.opt.clipboard = ""
+vim.o.completeopt = "menuone,noselect"
 
+vim.opt.showtabline = 0 --The tabline will not be shown
 vim.opt.completeopt = { "menuone", "noselect" } -- for cmp
 vim.o.completeopt = "menuone,noselect" -- Set options for completion menu
