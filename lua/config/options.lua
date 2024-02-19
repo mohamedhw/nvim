@@ -30,7 +30,7 @@ vim.opt.cindent = true
 -- Files [Swap, Backup, Undo]
 vim.opt.swapfile = false -- Disable swap files
 vim.opt.backup = false -- Disable backup files
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir" -- Set the directory for undo files
+vim.opt.undodir = os.getenv("HOME") .. "/.config/vim/undodir" -- Set the directory for undo files
 vim.opt.undofile = true -- Enable persistent undo
 
 -- Search
