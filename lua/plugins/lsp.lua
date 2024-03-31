@@ -82,7 +82,7 @@ return {
     local servers = {
       clangd = {},
       -- gopls = {},
-      pyright = {},
+      pyright = {'py'},
       tsserver = {},
       html = { filetypes = { 'html', 'twig', 'hbs', 'jsx', 'js' } },
       lua_ls = {

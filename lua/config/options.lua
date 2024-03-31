@@ -43,9 +43,15 @@ vim.o.smartcase = true -- Override 'ignorecase' when the search pattern contains
 --vim.opt.scrolloff = 8   -- Minimum number of lines to keep above and below the cursor
 vim.opt.signcolumn = "yes" -- Always show the sign column
 
-vim.opt.updatetime = 50 -- Faster update time for CursorHold events
-
+vim.opt.updatetime = 250 -- Faster update time for CursorHold events
+vim.opt.timeoutlen = 300
 vim.opt.showtabline = 0 -- The tabline will not be shown
+
+-- vim.opt.clipboard = 'unnamedplus'
 
 vim.opt.completeopt = { "menuone", "noselect" } -- for cmp
 vim.o.completeopt = "menuone,noselect" -- Set options for completion menu
+
+vim.opt.scrolloff = 10
+
+
