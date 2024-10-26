@@ -24,6 +24,11 @@ vim.api.nvim_create_autocmd("TextYankPost", {
         pattern = "*",
 })
 
+-- tree
+
+vim.keymap.set("v", "<leader>q", '<cmd>NERDTreeToggle<CR>', {silent = true})
+vim.keymap.set("n", "<leader>q", '<cmd>NERDTreeToggle<CR>', {silent = true})
+
 -- Yank mappings for different registers
 vim.keymap.set("n", "<leader>y", '"+y', opts)
 vim.keymap.set("v", "<leader>y", '"+y', opts)

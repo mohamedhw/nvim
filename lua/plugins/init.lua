@@ -1,19 +1,22 @@
 return{
   -- [[ displays a popup with possible key bindings ]]
-  {
-    "folke/which-key.nvim",
-    event = "VeryLazy",
-    init = function()
-      vim.o.timeout = true
-      vim.o.timeoutlen = 200
-    end,
-    opts = {}
-  },
+  -- {
+  --   "folke/which-key.nvim",
+  --   event = "VeryLazy",
+  --   init = function()
+  --     vim.o.timeout = true
+  --     vim.o.timeoutlen = 200
+  --   end,
+  --   opts = {}
+  -- },
   -- [[ list for showing diagnostics ]]
   {
     "folke/trouble.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     opts = {},
+  },
+  {
+    "preservim/nerdtree",
   },
   -- {
   --   "folke/noice.nvim",
