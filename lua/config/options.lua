@@ -30,6 +30,8 @@ vim.opt.backup = false -- Disable backup files
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir" -- Set the directory for undo files
 vim.opt.undofile = true -- Enable persistent undo
 
+vim.o.mouse = "" --dispale the mouse
+
 -- Search
 vim.opt.hlsearch = false -- Disable highlight search results
 vim.o.ignorecase = true -- Ignore case when searching
