@@ -20,3 +20,23 @@ vim.keymap.set("n", "<leader>Y", '"+Y')
 -- Run Ex command for opening a new Vim instance
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 vim.keymap.set("n", "<leader>sr", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left>")
+
+local map = vim.keymap.set
+
+-- Disable arrow keys in normal mode
+map("n", "<Up>", "<nop>")
+map("n", "<Down>", "<nop>")
+map("n", "<Left>", "<nop>")
+map("n", "<Right>", "<nop>")
+
+-- Disable arrow keys in insert mode
+map("i", "<Up>", "<nop>")
+map("i", "<Down>", "<nop>")
+map("i", "<Left>", "<nop>")
+map("i", "<Right>", "<nop>")
+
+-- Disable arrow keys in visual mode
+map("v", "<Up>", "<nop>")
+map("v", "<Down>", "<nop>")
+map("v", "<Left>", "<nop>")
+map("v", "<Right>", "<nop>")
