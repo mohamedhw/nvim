@@ -14,9 +14,9 @@ vim.opt.cursorline = true -- highlight the current line
 
 -- Indent
 vim.opt.autoindent = true -- Enable auto-indentation
-vim.opt.tabstop = 4 -- Set the width of a tab character to 2 spaces
-vim.opt.softtabstop = 4 -- Set the number of spaces inserted for a tab to 2
-vim.opt.shiftwidth = 4 -- Set the number of spaces to use for each step of (auto)indent to 2
+vim.opt.tabstop = 2 -- Set the width of a tab character to 2 spaces
+vim.opt.softtabstop = 2 -- Set the number of spaces inserted for a tab to 2
+vim.opt.shiftwidth = 2 -- Set the number of spaces to use for each step of (auto)indent to 2
 vim.opt.expandtab = true -- Use spaces instead of tabs
 vim.opt.backspace = "start,eol,indent" -- Allow backspacing over autoindent, line breaks, and start of insert line
 vim.opt.smartindent = true -- Enable smart indentation
@@ -38,11 +38,6 @@ vim.o.ignorecase = true -- Ignore case when searching
 vim.o.smartcase = true -- Override 'ignorecase' when the search pattern contains upper case characters
 
 -- vim.opt.termguicolors = true
-vim.opt.textwidth = 80
-vim.opt.colorcolumn = "80"
-vim.opt.wrap = true
-vim.opt.linebreak = true
-vim.opt.ruler = true
 
 vim.opt.signcolumn = "yes"
 

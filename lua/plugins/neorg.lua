@@ -1,39 +1,27 @@
 return {
   {
-    "vhyrro/luarocks.nvim",
-    priority = 1000,
-    config = true,
-  },
-  {
     "nvim-neorg/neorg",
-    dependencies = { "luarocks.nvim" },
-    version = "*", -- pins to the latest stable release; change if needed
+    ft = "norg",
+    cmd = "Neorg", -- Add this to ensure it loads when command is used
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim",
+    },
     config = function()
       require("neorg").setup({
         load = {
-          ["core.defaults"] = {}, -- Loads default behaviors
-          ["core.concealer"] = {}, -- Adds icons to your documents
-          ["core.ui.calendar"] = {},
-          ["core.completion"] = { config = { engine = "nvim-cmp", name = "[Norg]" } },
-          ["core.integrations.nvim-cmp"] = {},
-          ["core.esupports.metagen"] = { config = { type = "auto", update_date = true } },
-          ["core.qol.toc"] = {},
-          ["core.qol.todo_items"] = {},
-          ["core.looking-glass"] = {},
-          ["core.presenter"] = { config = { zen_mode = "zen-mode" } },
-          ["core.export"] = {},
-          ["core.export.markdown"] = { config = { extensions = "all" } },
-          ["core.summary"] = {},
-          ["core.tangle"] = { config = { report_on_empty = false } },
-          ["core.dirman"] = { -- Manages Neorg workspaces
+          ["core.defaults"] = {},
+          ["core.concealer"] = {},
+          ["core.dirman"] = {
             config = {
               workspaces = {
-                notes = "~/notes/notes", -- change path as needed
-                work = "~/notes/work",
+                notes = "~/D/sync/notes",
               },
-              default_workspace = "work",
             },
           },
+          ["core.neorgcmd"] = {},
+          -- Temporarily remove this line:
+          -- ["core.integrations.telescope"] = {},
         },
       })
     end,

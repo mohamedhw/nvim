@@ -21,22 +21,23 @@ vim.keymap.set("n", "<leader>Y", '"+Y')
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 vim.keymap.set("n", "<leader>sr", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left>")
 
-local map = vim.keymap.set
+--norg
+vim.keymap.set("n", "<leader>nn", function()
+  require("neorg")
+  vim.cmd("Neorg workspace notes")
+end, { desc = "Open Neorg Notes" })
 
--- Disable arrow keys in normal mode
-map("n", "<Up>", "<nop>")
-map("n", "<Down>", "<nop>")
-map("n", "<Left>", "<nop>")
-map("n", "<Right>", "<nop>")
+vim.keymap.set("n", "<leader>nf", function()
+  require("telescope.builtin").find_files({
+    prompt_title = "Neorg Notes",
+    cwd = "~/D/sync/notes",
+    file_ignore_patterns = { "^%.git/" },
+  })
+end, { desc = "Find Neorg Notes" })
 
--- Disable arrow keys in insert mode
-map("i", "<Up>", "<nop>")
-map("i", "<Down>", "<nop>")
-map("i", "<Left>", "<nop>")
-map("i", "<Right>", "<nop>")
-
--- Disable arrow keys in visual mode
-map("v", "<Up>", "<nop>")
-map("v", "<Down>", "<nop>")
-map("v", "<Left>", "<nop>")
-map("v", "<Right>", "<nop>")
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>ct",
+  ':lua require("neorg.modules.core.keybinds.module").toggle_task()<CR>',
+  { noremap = true, silent = true }
+)

@@ -1,0 +1,32 @@
+* show db;
+
+* use ITI;
+
+* show colections;
+
+* CRUD
+  ** db.students.updateOne
+    *** ({name: 'Name'},{$set:{name: "Name", email:'email@gmail.com'}},{upsert: true}) 
+  ** db.students.delete({})
+  ** db.student.deleteMany({})
+  ** db.students.drop()
+
+
+* db.students.find
+  ** ({age: {$gte: 25, $lte: 30}})
+  ** ({$or: [{eyecolor: 'green'},{eyecolor: 'blue'}]}).count()
+
+
+* Aggregation
+  ** db.persons.aggregate([{$match:{prop: value}}, {$match:{prop: value}}])
+  ** db.persons($match:{prop:value, prop:value})
+  ** db.persons($match:{prop:value, prop:value},{count: "total"})
+  ** db.persons($match:{prop:value, prop:value},{$progect: {}})
+  ** db.persons($match:{prop:value, prop:value},{$progect:{}}, {$limit: 1})
+  ** group
+  *** db.persons.aggregate([{$group: {_id :"$company.location.county"}}])
+  *** db.persons.aggregate([{$group: {_id :"$company.location.county", sumOfAge: "$age"}}])
+  *** db.persons.aggregate([{$group: {_id :"$company.location.county", sumOfAge: "$age"}}])
+
+
+
